@@ -1,6 +1,7 @@
 import React from 'react'
 import { Logo } from './logo'
 import Search from './search'
+import Actions from './actions'
 
 const Navbar = () => {
   return (
@@ -9,6 +10,7 @@ const Navbar = () => {
     flex justify-between items-center shadow-sm'>
         <Logo />
         <Search />
+        <Actions />
     </nav>
   )
 }
