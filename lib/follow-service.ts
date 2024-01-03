@@ -10,6 +10,7 @@ export const getFollowedUsers = async ( ) => {
       where: {
         followerId: self.id,
         following: {
+          
           // ensure user we following aint blocking us
           blocking: {
             none: {
@@ -19,7 +20,11 @@ export const getFollowedUsers = async ( ) => {
         }
       },
       include: {
-        following: true
+        following: {
+          include: {
+            stream: true
+          }
+        }
       }
     })
 
